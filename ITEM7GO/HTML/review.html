@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/review.css">
+    <title>Review - Item7(go)</title>
+</head>
+<body>
+    <header>
+        <button class="hamburger" id="hamburger-btn-review">&#9776;</button>
+        <div class="main">
+            <div class="logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <ul id="nav-menu-review">
+                <div class="list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./reservation.html">Reservation</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li class="active"><a href="#">Review</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+    </header>
+
+    <main class="review-section">
+        <div class="container">
+            <h1>Share Your Review</h1>
+            <p>We value your feedback! Rate our restaurant, dishes, and services, and let us know how we can improve.</p>
+
+            <form id="reviewForm" class="review-form">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="rating-group">
+                    <label>Rate the Restaurant (1-5 stars) *</label>
+                    <div class="stars" data-rating="restaurant">
+                        <input type="radio" id="restaurant-1" name="restaurant-rating" value="1">
+                        <label for="restaurant-1">★</label>
+                        <input type="radio" id="restaurant-2" name="restaurant-rating" value="2">
+                        <label for="restaurant-2">★</label>
+                        <input type="radio" id="restaurant-3" name="restaurant-rating" value="3">
+                        <label for="restaurant-3">★</label>
+                        <input type="radio" id="restaurant-4" name="restaurant-rating" value="4">
+                        <label for="restaurant-4">★</label>
+                        <input type="radio" id="restaurant-5" name="restaurant-rating" value="5">
+                        <label for="restaurant-5">★</label>
+                    </div>
+                </div>
+
+                <div class="rating-group">
+                    <label>Rate the Dishes (1-5 stars) *</label>
+                    <div class="stars" data-rating="dishes">
+                        <input type="radio" id="dishes-1" name="dishes-rating" value="1">
+                        <label for="dishes-1">★</label>
+                        <input type="radio" id="dishes-2" name="dishes-rating" value="2">
+                        <label for="dishes-2">★</label>
+                        <input type="radio" id="dishes-3" name="dishes-rating" value="3">
+                        <label for="dishes-3">★</label>
+                        <input type="radio" id="dishes-4" name="dishes-rating" value="4">
+                        <label for="dishes-4">★</label>
+                        <input type="radio" id="dishes-5" name="dishes-rating" value="5">
+                        <label for="dishes-5">★</label>
+                    </div>
+                </div>
+
+                <div class="rating-group">
+                    <label>Rate the Services (1-5 stars) *</label>
+                    <div class="stars" data-rating="services">
+                        <input type="radio" id="services-1" name="services-rating" value="1">
+                        <label for="services-1">★</label>
+                        <input type="radio" id="services-2" name="services-rating" value="2">
+                        <label for="services-2">★</label>
+                        <input type="radio" id="services-3" name="services-rating" value="3">
+                        <label for="services-3">★</label>
+                        <input type="radio" id="services-4" name="services-rating" value="4">
+                        <label for="services-4">★</label>
+                        <input type="radio" id="services-5" name="services-rating" value="5">
+                        <label for="services-5">★</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback">Your Feedback *</label>
+                    <textarea id="feedback" name="feedback" rows="4" placeholder="Tell us about your experience..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggestions">Suggestions</label>
+                    <textarea id="suggestions" name="suggestions" rows="3" placeholder="Any suggestions for improvement?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+
+            <div class="reviews-display">
+                <h2>Customer Reviews</h2>
+                <div id="reviews-list">
+                    <!-- Reviews will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/JS1/review.js"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: century;
+}
+
+body{
+    background: black;
+    color: white;
+}
+
+header{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    min-height: 100px;
+}
+
+.main ul{
+    position: fixed;
+    top: 6px;
+    right: 10px;
+    border-radius: 100px;
+    width: 700px;
+    list-style: none;
+    min-height: 40px;
+    background-color: rgba(255, 0, 0, 0.575);
+    font-size: 17px;
+    padding-top: 17px;
+    z-index: 100;
+}
+
+.list{
+    padding-left: 20px;
+}
+
+ul li{
+    display: inline-block;
+    font-weight: bolder;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    background-color: black;
+    color: yellow;
+    border-radius: 100px;
+}
+
+ul li.active a{
+    background-color: black;
+    border-radius: 100px;
+}
+
+ul li.active a:hover{
+    color: yellow;
+    border-radius: 100px;
+}
+
+.logo img{
+    position: fixed;
+    border-radius: 100px;
+    float: left;
+    width: 90px;
+    margin: 20px 0 0 -65px;
+    height: auto;
+    border: 5px solid rgba(255, 0, 0, 0.575);
+    animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(0deg);
+    }
+    20% {
+        transform: rotateX(360deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.main{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+}
+
+#nav-menu-contact {
+    transition: all 0.3s ease;
+}
+
+.contact-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -600px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: #ffcc00;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item h3 {
+    color: #ffcc00;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.info-item p {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    font-family: century;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #ff0000;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #cc0000;
+}
+
+.form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.form-message.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .main ul {
+        width: 600px;
+        font-size: 16px;
+    }
+
+    ul li a {
+        padding: 5px 15px;
+    }
+
+    .logo img {
+        width: 80px;
+        margin: 20px 0 0 -55px;
+    }
+
+    .contact-section {
+        padding: 15px 15px 15px 15px;
+        margin-top: -550px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    .contact-content {
+        gap: 30px;
+    }
+
+    .info-item h3 {
+        font-size: 16px;
+    }
+
+    .info-item p {
+        font-size: 15px;
+    }
+
+    .form-group label {
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #nav-menu-contact {
+        display: none;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        background-color: rgba(255, 0, 0, 0.9);
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 0 0 0 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #nav-menu-contact.show {
+        display: flex;
+    }
+
+    .list {
+        padding-left: 0;
+    }
+
+    ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    ul li a {
+        padding: 8px 15px;
+        display: block;
+        color: white;
+    }
+
+    .logo img {
+        position: static;
+        float: none;
+        width: 80px;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-section {
+        padding: 10px 10px 10px 10px;
+        margin-top: -550px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 22px;
+    }
+
+    .info-item h3 {
+        font-size: 15px;
+    }
+
+    .info-item p {
+        font-size: 14px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 5px 5px 5px 5px;
+        margin-top: -500px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 20px;
+    }
+
+    .info-item h3 {
+        font-size: 14px;
+    }
+
+    .info-item p {
+        font-size: 13px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}

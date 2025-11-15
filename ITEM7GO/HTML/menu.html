@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <title>Menu</title>
+</head>
+<body>
+    <header>
+        <button class="hamburger" id="hamburger-btn-menu">&#9776;</button>
+        <div class="main">
+            <dir class="logo">
+            <!-- <img src="" alt="MK"> -->
+             <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </dir>
+            <ul id="nav-menu-menu">
+                <div class="list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li class="active"><a href="#">Menu</a></li>
+                    <li><a href="./reservation.html">Reservation</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./review.html">Review</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+
+        <!-- Category Selector -->
+        <div class="category-selector">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="meat">Meat</button>
+            <button class="category-btn" data-category="food">Food</button>
+            <button class="category-btn" data-category="drinks">Drinks</button>
+            <button class="category-btn" data-category="dessert">Dessert</button>
+        </div>
+
+        <!-- Cart Container -->
+        <div id="cart-container">
+            <h3>CART</h3>
+            <div id="last-item">Last Item: None</div>
+            <div id="total-items">Total Items: 0</div>
+            <div id="total-amount">Total Amount: NGN 0</div>
+            <ul id="cart-items"></ul>
+            <button id="checkout-btn">Checkout</button>
+            <button id="clear-all-btn">Clear All</button>
+        </div>
+
+        <!-- Quantity Modal -->
+        <div id="quantity-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Select Quantity</h3>
+                <select id="quantity-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <button id="confirm-quantity">Add to Cart</button>
+                <button id="cancel-quantity">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Checkout Modal -->
+        <div id="checkout-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Order Confirmation.</h3>
+                <div id="checkout-items"></div>
+                <div id="checkout-total"></div>
+                <button id="confirm-order">Confirm Order</button>
+                <button id="cancel-order">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Customer Details Modal -->
+        <div id="customer-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Enter Your Details</h3>
+                <form id="customer-form">
+                    <input type="radio" id="pickup" name="order-type" value="pickup">
+                    <label for="pickup">Pickup</label>
+                    <input type="radio" id="delivery" name="order-type" value="delivery">
+                    <label for="delivery">Delivery</label><br><br>
+
+                    <div id="pickup-fields" style="display: none;">
+                        <label for="pickup-time">Pickup Time:</label>
+                        <select id="pickup-time">
+                            <option value="">Select Time</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="6:00 PM">6:00 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="8:00 PM">8:00 PM</option>
+                            <option value="9:00 PM">9:00 PM</option>
+                        </select><br><br>
+                    </div>
+
+                    <div id="delivery-fields">
+                        <label for="customer-state">State:</label>
+                        <input type="text" id="customer-state" list="state-list"><br><br>
+                        <datalist id="state-list">
+                            <option value="Abia">
+                            <option value="Adamawa">
+                            <option value="Akwa Ibom">
+                            <option value="Anambra">
+                            <option value="Bauchi">
+                            <option value="Bayelsa">
+                            <option value="Benue">
+                            <option value="Borno">
+                            <option value="Cross River">
+                            <option value="Delta">
+                            <option value="Ebonyi">
+                            <option value="Edo">
+                            <option value="Ekiti">
+                            <option value="Enugu">
+                            <option value="Federal Capital Territory">
+                            <option value="Gombe">
+                            <option value="Imo">
+                            <option value="Jigawa">
+                            <option value="Kaduna">
+                            <option value="Kano">
+                            <option value="Katsina">
+                            <option value="Kebbi">
+                            <option value="Kogi">
+                            <option value="Kwara">
+                            <option value="Lagos">
+                            <option value="Nasarawa">
+                            <option value="Niger">
+                            <option value="Ogun">
+                            <option value="Ondo">
+                            <option value="Osun">
+                            <option value="Oyo">
+                            <option value="Plateau">
+                            <option value="Rivers">
+                            <option value="Sokoto">
+                            <option value="Taraba">
+                            <option value="Yobe">
+                            <option value="Zamfara">
+                        </datalist>
+                        <label for="customer-city">City:</label>
+                        <input type="text" id="customer-city" list="city-list"><br><br>
+                        <datalist id="city-list">
+                        </datalist>
+                        <label for="customer-bus-stop">Nearest Bus Stop:</label>
+                        <input type="text" id="customer-bus-stop" list="bus-stop-list"><br><br>
+                        <datalist id="bus-stop-list">
+                        </datalist>
+                        <label for="customer-address">Address:</label>
+                        <input type="text" id="customer-address"><br><br>
+                    </div>
+
+                    <label for="customer-name">Name:</label>
+                    <input type="text" id="customer-name"><br><br>
+                    <label for="customer-phone">Phone Number:</label>
+                    <input type="tel" id="customer-phone"><br><br>
+                    <button type="submit" id="submit-details">Submit</button>
+                    <button type="button" id="cancel-details">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Order Confirmation Modal -->
+        <div id="order-confirmation-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Confirm Your Order</h3>
+                <div id="order-details"></div>
+                <button id="confirm-order-final">Confirm Order</button>
+                <button id="cancel-order-final">Cancel</button>
+            </div>
+        </div>
+
+    <div class="menu-container">
+        <div class="menu-item" data-category="meat">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Spicy Chicken Wings">
+            </div>
+            <div class="item">Spicy Chicken Wings</div>
+            <div class="price">NGN 4500</div>
+            <button class="order-btn" data-item="Spicy Chicken Wings" data-price="4500">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="food">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Jollof Rice">
+            </div>
+            <div class="item">Jollof Rice</div>
+            <div class="price">NGN 3000</div>
+            <button class="order-btn" data-item="Jollof Rice" data-price="3000">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="food">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Beef Stew">
+            </div>
+            <div class="item">Beef Stew</div>
+            <div class="price">NGN 4000</div>
+            <button class="order-btn" data-item="Beef Stew" data-price="4000">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="food">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Pasta">
+            </div>
+            <div class="item">Pasta</div>
+            <div class="price">NGN 3500</div>
+            <button class="order-btn" data-item="Pasta" data-price="3500">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="meat">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Fish">
+            </div>
+            <div class="item">Fish</div>
+            <div class="price">NGN 2500</div>
+            <button class="order-btn" data-item="Fish" data-price="2500">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="meat">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Barbeque">
+            </div>
+            <div class="item">Barbeque</div>
+            <div class="price">NGN 5500</div>
+            <button class="order-btn" data-item="Barbeque" data-price="5500">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="drinks">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Cocktail">
+            </div>
+            <div class="item">Cocktail</div>
+            <div class="price">NGN 2000</div>
+            <button class="order-btn" data-item="Cocktail" data-price="2000">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="food">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Shawarma">
+            </div>
+            <div class="item">Shawarma</div>
+            <div class="price">NGN 6000</div>
+            <button class="order-btn" data-item="Shawarma" data-price="6000">Order</button>
+        </div>
+
+        <div class="menu-item" data-category="dessert">
+            <div class="menu-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+            <div class="item-pic">
+                <img src="../Pictures/4t0fl03m.png" alt="Ice-cream">
+            </div>
+            <div class="item">Ice-cream</div>
+            <div class="price">NGN 4000</div>
+            <button class="order-btn" data-item="Ice-cream" data-price="4000">Order</button>
+        </div>
+    </div>
+    </header>
+    <script src="/js/menu.js"></script>
+</body>
+</html>

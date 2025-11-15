@@ -1,0 +1,685 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: century;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+header {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    min-height: 100px;
+}
+
+/* Video background */
+video.background-video {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Dark overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Navigation */
+.main ul {
+    position: fixed;
+    top: 6px;
+    right: 10px;
+    border-radius: 100px;
+    width: 700px;
+    list-style: none;
+    min-height: 40px;
+    background-color: rgba(255, 0, 0, 0.575);
+    font-size: 17px;
+    padding-top: 17px;
+    z-index: 10;
+}
+
+.list {
+    padding-left: 20px;
+}
+
+ul li {
+    display: inline-block;
+    font-weight: bolder;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+    background-color: black;
+    color: yellow;
+    border-radius: 100px;
+}
+
+ul li.active a {
+    background-color: black;
+    border-radius: 100px;
+}
+
+ul li.active a:hover {
+    background-color: black;
+    color: yellow;
+    border-radius: 100px;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+}
+
+#nav-menu-reservation {
+    transition: all 0.3s ease;
+}
+
+/* Header logo */
+.header-logo img {
+    position: fixed;
+    width: 200px;
+    border-radius: 100px;
+    margin-top: 10px;
+    top: -7px;
+    margin-left: 10px;
+    float: left;
+    border: 5px solid rgba(255, 0, 0, 0.575);
+    z-index: 11;
+    animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(0deg);
+    }
+    10% {
+        transform: rotateX(360deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+/* Reservation section */
+.reservation-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 10px 20px;
+    color: white;
+    z-index: 1;
+    margin-top: -650px;
+}
+
+.container {
+    max-width: 600px;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    overflow-y: auto;
+    max-height: none;
+}
+
+.reservation-section h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 36px;
+    color: yellow;
+}
+
+.reservation-section p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: red;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: black;
+    border: 2px solid white;
+    font-size: 19px;
+}
+
+/* Confirmation message */
+.confirmation {
+    text-align: center;
+    color: yellow;
+}
+
+.confirmation h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.confirmation p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.confirmation button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.confirmation button:hover {
+    background-color: black;
+    border: 1px solid white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Form step styling for scrolling */
+.form-step {
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+/* Branch and Table Options */
+.branch-options, .table-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.branch-option, .table-option {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.branch-option:hover, .table-option:hover {
+    border-color: red;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.branch-option h3, .table-option h3 {
+    color: yellow;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.branch-option p, .table-option p {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.select-branch-btn, .select-table-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.select-branch-btn:hover, .select-table-btn:hover {
+    background-color: black;
+    border: 1px solid white;
+}
+
+/* Summary and Payment */
+.summary {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.summary p {
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.total-price {
+    text-align: center;
+    font-size: 24px;
+    color: yellow;
+    margin-bottom: 20px;
+}
+
+.payment-details {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.payment-details h3 {
+    color: yellow;
+    margin-bottom: 15px;
+}
+
+.payment-details p {
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.note {
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Back Button */
+.back-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: red;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .main ul {
+        width: 600px;
+        font-size: 16px;
+    }
+
+    ul li a {
+        padding: 5px 15px;
+    }
+
+    .header-logo img {
+        width: 180px;
+        margin-left: 5px;
+    }
+
+    .reservation-section {
+        padding-top: 15px;
+    }
+
+    .container {
+        padding: 35px;
+        max-width: 550px;
+    }
+
+    .reservation-section h1 {
+        font-size: 32px;
+    }
+
+    .reservation-section p {
+        font-size: 17px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        font-size: 17px;
+    }
+
+    .branch-options, .table-options {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .branch-option, .table-option {
+        padding: 18px;
+    }
+
+    .branch-option h3, .table-option h3 {
+        font-size: 18px;
+    }
+
+    .branch-option p, .table-option p {
+        font-size: 15px;
+    }
+
+    .select-branch-btn, .select-table-btn {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+
+    .summary p {
+        font-size: 15px;
+    }
+
+    .total-price {
+        font-size: 22px;
+    }
+
+    .payment-details h3 {
+        font-size: 16px;
+    }
+
+    .payment-details p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #nav-menu-reservation {
+        display: none;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        background-color: rgba(255, 0, 0, 0.9);
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 0 0 0 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #nav-menu-reservation.show {
+        display: flex;
+    }
+
+    .list {
+        padding-left: 0;
+    }
+
+    ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    ul li a {
+        padding: 8px 15px;
+        display: block;
+        color: white;
+    }
+
+    .header-logo img {
+        position: static;
+        float: none;
+        width: 120px;
+        margin: 10px auto;
+        display: block;
+        border: 3px solid rgba(255, 0, 0, 0.575);
+    }
+
+    .reservation-section {
+        padding: 80px 10px 20px;
+        min-height: 100vh;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 95%;
+        max-height: none;
+        height: auto;
+    }
+
+    .reservation-section h1 {
+        font-size: 28px;
+    }
+
+    .reservation-section p {
+        font-size: 16px;
+    }
+
+    .form-group label {
+        font-size: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .branch-options, .table-options {
+        grid-template-columns: 1fr;
+    }
+
+    .branch-option, .table-option {
+        padding: 15px;
+    }
+
+    .branch-option h3, .table-option h3 {
+        font-size: 16px;
+    }
+
+    .branch-option p, .table-option p {
+        font-size: 14px;
+    }
+
+    .select-branch-btn, .select-table-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .summary p {
+        font-size: 14px;
+    }
+
+    .total-price {
+        font-size: 20px;
+    }
+
+    .payment-details h3 {
+        font-size: 15px;
+    }
+
+    .payment-details p {
+        font-size: 13px;
+    }
+
+    .back-btn {
+        font-size: 15px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reservation-section {
+        padding: 60px 5px 20px;
+        min-height: 100vh;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 100%;
+        max-height: none;
+        height: auto;
+    }
+
+    .reservation-section h1 {
+        font-size: 24px;
+    }
+
+    .reservation-section p {
+        font-size: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .submit-btn {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .branch-option, .table-option {
+        padding: 12px;
+    }
+
+    .branch-option h3, .table-option h3 {
+        font-size: 15px;
+    }
+
+    .branch-option p, .table-option p {
+        font-size: 13px;
+    }
+
+    .select-branch-btn, .select-table-btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .summary p {
+        font-size: 13px;
+    }
+
+    .total-price {
+        font-size: 18px;
+    }
+
+    .payment-details h3 {
+        font-size: 14px;
+    }
+
+    .payment-details p {
+        font-size: 12px;
+    }
+
+    .back-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .confirmation h2 {
+        font-size: 24px;
+    }
+
+    .confirmation p {
+        font-size: 14px;
+    }
+
+    .confirmation button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

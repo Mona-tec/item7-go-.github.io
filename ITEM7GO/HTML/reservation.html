@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reservation.css">
+    <title>Reserve a Table - Item7(go)</title>
+</head>
+<body>
+    <header>
+        <!-- Background video -->
+        <video autoplay muted loop class="background-video">
+            <source src="../Videos/Video Project.mp4" type="video/mp4">
+        </video>
+        <!-- Optional dark overlay -->
+        <div class="overlay"></div>
+
+        <button class="hamburger" id="hamburger-btn-reservation">&#9776;</button>
+        <div class="main">
+            <ul id="nav-menu-reservation">
+                <div class="list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li class="active"><a href="#">Reservation</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./review.html">Review</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </div>
+            </ul>
+        </div>
+        <div>
+            <div class="header-logo">
+                <img src="../Logo/4o5392de.png" alt="ITEM7(GO)">
+            </div>
+        </div>
+    </header>
+
+    <main class="reservation-section">
+        <div class="container">
+            <h1>Reserve Your Table</h1>
+            <p>Book a table at Item7(go) for an unforgettable dining experience.</p>
+            <!-- Step 1: Basic Reservation Details -->
+            <form id="reservationForm" class="form-step">
+                <h2>Step 1: Reservation Details</h2>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Reservation Date *</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Reservation Time *</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select Time</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                        <option value="21:00">9:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests *</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select Guests</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="requests">Special Requests</label>
+                    <textarea id="requests" name="requests" rows="4" placeholder="Any special requests or notes..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Next: Select Branch</button>
+            </form>
+
+            <!-- Step 2: Branch Selection -->
+            <div id="branchForm" class="form-step hidden">
+                <h2>Step 2: Select Branch</h2>
+                <div class="branch-options">
+                    <div class="branch-option" data-branch="bodija" data-price="50000">
+                        <h3>Bodija Branch</h3>
+                        <p>Base Price: ₦50,000</p>
+                        <button class="select-branch-btn">Select</button>
+                    </div>
+                    <div class="branch-option" data-branch="ringroad" data-price="45000">
+                        <h3>Ringroad Branch</h3>
+                        <p>Base Price: ₦45,000</p>
+                        <button class="select-branch-btn">Select</button>
+                    </div>
+                    <div class="branch-option" data-branch="lagos" data-price="60000">
+                        <h3>Lagos Branch</h3>
+                        <p>Base Price: ₦60,000</p>
+                        <button class="select-branch-btn">Select</button>
+                    </div>
+                    <div class="branch-option" data-branch="abuja" data-price="55000">
+                        <h3>Abuja Branch</h3>
+                        <p>Base Price: ₦55,000</p>
+                        <button class="select-branch-btn">Select</button>
+                    </div>
+                </div>
+                <button id="backToReservation" class="back-btn">Back</button>
+            </div>
+
+            <!-- Step 3: Table Type Selection -->
+            <div id="tableForm" class="form-step hidden">
+                <h2>Step 3: Select Table Type</h2>
+                <div id="tableOptions" class="table-options">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+                <button id="backToBranch" class="back-btn">Back</button>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div id="confirmationForm" class="form-step hidden">
+                <h2>Step 4: Confirm Your Reservation</h2>
+                <div id="reservationSummary" class="summary">
+                    <!-- Summary will be populated by JavaScript -->
+                </div>
+                <div class="total-price">
+                    <strong>Total: <span id="totalPrice"></span></strong>
+                </div>
+                <button id="confirmReservation" class="submit-btn">Confirm & Proceed to Payment</button>
+                <button id="backToTable" class="back-btn">Back</button>
+            </div>
+
+            <!-- Step 5: Payment Details -->
+            <div id="paymentForm" class="form-step hidden">
+                <h2>Step 5: Payment Details</h2>
+                <div class="payment-details">
+                    <h3>Bank Transfer Details</h3>
+                    <p><strong>Bank:</strong> First Bank of Nigeria</p>
+                    <p><strong>Account Name:</strong> Item7(go) Restaurant</p>
+                    <p><strong>Account Number:</strong> 1234567890</p>
+                    <p><strong>Amount:</strong> <span id="paymentAmount"></span></p>
+                    <p class="note">Please transfer the exact amount and send proof of payment to reservations@item7go.com</p>
+                </div>
+                <button id="completeReservation" class="submit-btn">Complete Reservation</button>
+                <button id="backToConfirmation" class="back-btn">Back</button>
+            </div>
+
+            <!-- Final Confirmation -->
+            <div id="finalConfirmation" class="confirmation hidden">
+                <h2>Reservation Complete!</h2>
+                <p>Thank you for your reservation. Please complete the payment and send proof to confirm your booking.</p>
+                <button id="newReservation">Make Another Reservation</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="/JS1/reservation.js"></script>
+</body>
+</html>
